@@ -1,0 +1,36 @@
+<template>
+    <!-- lightning-card provides a styled container with a header -->
+    <lightning-card title="Edit Account Record">
+
+        <!-- lightning-record-form is a complete form that uses Lightning Data Service (LDS) -->
+        <lightning-record-form
+            object-api-name="Account"        
+            record-id={recordId}             
+            layout-type="Full"               
+            mode="edit"                     
+            columns="2"                     
+            onsuccess={handleSuccess}        
+            onerror={handleError}>           
+        </lightning-record-form>
+
+    </lightning-card>
+</template>
+
+<!--object-api-name="Account"        The API name of the object we're working with (Account) -->
+<!--record-id={recordId}             The record ID to load for editing; passed from the JS file or parent-->
+<!--layout-type="Full"               Use the full layout as defined in the Account object's page layout -->
+<!--mode="edit"                      The form will be in edit mode (fields are editable) [if u don't specify mode then default is view only]-->
+<!--columns="2"                      Arrange fields in 2 columns instead of default 1 column-->
+<!--onsuccess={handleSuccess}        JS handler called after a successful save operation -->
+<!--onerror={handleError}>           JS handler called when an error occurs during save -->
+
+<!--| Attribute            | Meaning                                                                     |
+| -------------------- | --------------------------------------------------------------------------- |
+| `object-api-name`    | Specifies which object (e.g., Account, Contact) to load.                    |
+| `record-id`          | The specific record to edit. Must be passed from JS (`@api recordId`).      |
+| `layout-type="Full"` | Uses all fields from the full layout defined in Salesforce Setup.           |
+| `mode="edit"`        | Makes the form editable. You can also use `"view"` or `"readonly"` modes.   |
+| `columns="2"`        | Fields are arranged in 2 columns for better layout.                         |
+| `onsuccess`          | Calls a JS function after save is successful (e.g., show toast).            |
+| `onerror`            | Calls a JS function if something goes wrong during save (e.g., show error). |
+-->
