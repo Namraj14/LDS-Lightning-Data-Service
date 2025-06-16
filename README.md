@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📘 Lightning Data Service (LDS) - Overview
 
 ## 🔷 What is Lightning Data Service (LDS)?
@@ -113,3 +114,6 @@ It leverages **Lightning Data Service (LDS)** behind the scenes, so it benefits 
 - ✅ **No Apex or JavaScript needed** — simplifies development for admins and developers
 - ✅ **Clean and simple UI** for displaying Salesforce record data
 - ✅ **Uses LDS caching and auto-refresh features** for improved performance and real-time updates
+=======
+# lightning-record-form
+>>>>>>> ec13014 (Initial commit)
