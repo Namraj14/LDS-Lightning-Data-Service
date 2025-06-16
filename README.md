@@ -49,7 +49,7 @@ It provides a standard way to work with record data and is conceptually similar 
 
 📝 Tip: You can change mode="edit" to view or readonly to switch behavior.
 
-### 2. `lightning-record-edit-form`
+#### 2. `lightning-record-edit-form`
 
 - Use when you want **custom layout control** over form fields.
 - Still uses **Lightning Data Service** (LDS) internally.
@@ -76,9 +76,9 @@ It provides a standard way to work with record data and is conceptually similar 
 
     <!-- Submit button to save changes -->
     <lightning-button type="submit" label="Save"></lightning-button>
-</lightning-record-edit-form>
+</lightning-record-edit-form> 
 
-## ⚙️ 3. `lightning-record-view-form`
+#### ⚙️ 3. `lightning-record-view-form`
 
 The `lightning-record-view-form` component is used to **display Salesforce record data in a read-only format**.
 
