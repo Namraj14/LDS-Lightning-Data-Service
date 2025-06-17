@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Edit Contact Record">
+        <lightning-record-edit-form object-api-name="Contact" record-id={recordId} onsuccess={handleSuccess}
+            onerror={handleError}>
+
+
+            <!-- Fields you want to display -->
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="FirstName"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="LastName"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Email"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                </div>
+            </div>
+            <!-- Save and Cancel buttons -->
+            <div class="slds-m-top_medium">
+                <lightning-button variant="brand" type="submit" label="Save">
+                    <!--The type="submit" triggers the form submission — no extra code is needed to save the record.-->
+                </lightning-button>
+                <lightning-button variant="neutral" label="Cancel" onclick={handleCancel} class="slds-m-left_small">
+                    <!--for Cancel you have to write the behavior by yourself-->
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
+
+<!-- Do all handlers like onsuccess, onerror, onsubmit need (event)?
+✔️ Yes — they must accept the event parameter
+if you want to access any information from the event. -->
+<!-- 🔍 Why?
+Because these are event listeners, and Salesforce automatically passes the event object to your handler when the event is fired. -->
+
+
+<!-- | Attribute                   | Event Name     | Should Have `(event)`? | Use Case                                  |
+| --------------------------- | -------------- | ---------------------- | ----------------------------------------- |
+| `onsuccess={handleSuccess}` | `SuccessEvent` | ✅ Yes                  | Record saved successfully                 |
+| `onerror={handleError}`     | `ErrorEvent`   | ✅ Yes                  | Save failed                               |
+| `onsubmit={handleSubmit}`   | `SubmitEvent`  | ✅ Yes                  | Right before save, for validation/logging |
+| `onload={handleLoad}`       | `LoadEvent`    | ✅ Yes                  | When form is loaded                       |
+ -->
